@@ -1,0 +1,30 @@
+<!-- 
+    We can data bind using v-bind or :
+ -->
+
+<!DOCTYPE html>
+<html lang="en"></html>
+
+<div id="app">
+    <div> 
+        <h1>{{ message }}</h1>
+        <a :href="url">{{ url }}</a>
+        <h1 :data="dynamicId">{{dynamicId}}</h1>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+    //vm stands for view model
+    new Vue({
+        el: '#app',
+        data: {
+           message: 'Hello',
+           url: 'http://medafx.com',
+           dynamicId: 30
+        }
+    });
+
+</script>

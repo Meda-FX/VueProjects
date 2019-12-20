@@ -1,0 +1,40 @@
+<!-- 
+    In this example we are going to take a data from the outside of the component to the inside
+ -->
+
+<!DOCTYPE html>
+<html lang="en"></html>
+
+<div id="app">
+    <div> 
+        <posts :data='55'> </posts>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+    
+    Vue.component('posts', {
+
+        props: ['data'],
+
+        template: ` <h1 @click="display"> {{ data }} </h1> `,
+
+        data() {
+           return {
+               message: 'Hello Meda'
+            }
+        },
+        methods: {
+            display(){
+                console.log('Method display is working.')
+            }
+        }
+    });
+    //vm stands for view model
+    let vm = new Vue({
+        el: '#app'      
+    });
+
+</script>

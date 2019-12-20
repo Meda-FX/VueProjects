@@ -1,0 +1,33 @@
+<!-- 
+    It will watch if something changes amd act according
+    In this example we created a watch function, that sends an email if a user active
+ -->
+<!DOCTYPE html>
+<html lang="en"></html>
+
+<div id="app">
+    <div> 
+        <h1>Voodood Child  {{ isActive === 'active' ? 'is Active' : 'is Not Active'}}</h1>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+    //vm stands for view model
+    let vm = new Vue({
+        el: '#app',
+        data: {
+           message: 'Hello',
+           isActive: 'not active'
+        },
+
+        watch: {
+            isActive: function(newValue){
+                console.log('Send user an email ' + newValue)
+            }
+        }
+    });
+
+</script>

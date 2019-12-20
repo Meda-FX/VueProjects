@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+
+<div id="app">
+
+    <div :style=" {textAlign: text_Align}">
+        <button @click="increaseFont">Increase</button> | <button @click="decreaseFont">Decrease</button>
+    </div>
+    <br>
+    <div :style="{textAlign: text_Align, color:'red', fontSize: fontSize + 'px'}">
+       <div v-if="test"> {{message}} </div>
+    </div>
+
+    <div :style=" {textAlign: text_Align}">
+        <button @click="showElement">Show</button> | <button @click="hideElement">Hide</button>
+    </div>
+    
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+    //vm stands for view model
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            message: 'Voodo Child',
+            fontSize: 12,
+            text_Align: 'center',
+            test: false,
+            color: 'blue'
+        },
+
+        methods: {
+            increaseFont(){
+                this.fontSize++;
+                this.message = "Any Word."
+            },
+            decreaseFont(){
+                this.fontSize--;
+            },
+            showElement() {
+                this.test = true
+            },
+
+            hideElement(){
+                this.test = false
+            }
+        }
+    });
+
+</script>

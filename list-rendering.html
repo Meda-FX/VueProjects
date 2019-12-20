@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+
+<div id="app">
+    <div> 
+        <ul>
+            <li v-for="post in posts" :key="post.id">{{post.id}}</li>
+            <li v-for="post in posts" :key="post.id">{{post.title}}</li>
+            <li v-for="post in posts" :key="post.id">{{post.body}}</li>
+        </ul>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+    //vm stands for view model
+    new Vue({
+        el: '#app',
+        data: {
+           posts: [
+               {id: 1, title: 'Post 1', body: 'lorem ldkjhsglksfjghfkjsghfhfgkjsghfsgkhf jhdflgkjhsfkljghdsgkjhfg jhlfkjghsfkjghf'},
+               {id: 2, title: 'Post 2', body: 'lorem ldkjhsglksfjghfkjsghfhfgkjsghfsgkhf jhdflgkjhsfkljghdsgkjhfg jhlfkjghsfkjghf'},
+               {id: 3, title: 'Post 3', body: 'lorem ldkjhsglksfjghfkjsghfhfgkjsghfsgkhf jhdflgkjhsfkljghdsgkjhfg jhlfkjghsfkjghf'},
+               {id: 4, title: 'Post 4', body: 'lorem ldkjhsglksfjghfkjsghfhfgkjsghfsgkhf jhdflgkjhsfkljghdsgkjhfg jhlfkjghsfkjghf'}
+           ]
+        }
+    });
+
+</script>

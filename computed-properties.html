@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+
+<div id="app">
+    <div> 
+        <h1>{{ message }}</h1>
+        <input type="text" v-model="message">
+        <button @click="test"> Reverse </button>
+    </div>
+
+    <div>
+        <video controls width="60%">
+    
+        <source src="test.webm" type="video/webm">
+        Sorry, your browser doesn't support embedded videos.
+    </video>
+    
+      </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+    //vm stands for view model
+    new Vue({
+        el: '#app',
+        data: {
+           message: 'Hello'
+        },
+
+        methods: {
+            test(){
+                this.message = this.reverseMessage;
+            }
+        },
+
+        computed: {
+            reverseMessage() {
+                return this.message.split('').reverse('').join('');
+            }            
+        }
+    });
+
+</script>

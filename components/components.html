@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+
+<div id="app">
+    <div> 
+        
+        <posts></posts>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+
+    Vue.component('posts', {
+        template: '<h1> Voodoo Child using component!</h1>'
+    });
+
+    //vm stands for view model
+    let vm = new Vue({
+        el: '#app',
+        data: {
+           message: 'Hello'
+        }
+    });
+
+</script>

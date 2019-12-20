@@ -1,0 +1,56 @@
+<!-- 
+    - We will create a nesting component that carries a post '<li>' element
+    - Inside the element we wil create a slot in order to populate the data from POST array
+    - Slots are used as a placeholder. It is  a predefined variable 
+ -->
+
+<!DOCTYPE html>
+<html lang="en"></html>
+
+<div id="app">
+    <div> 
+        <posts> </posts>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+    
+    Vue.component('posts', {
+
+        template: ` 
+            <div>
+                <ul>
+                    <post v-for="post in posts" :key="post.id">{{post.title}}</post>
+                </ul>
+            </div>
+         `,
+
+        data() {
+           return {
+            posts: [
+                    {id: 1, title: 'Post 1', body: 'lorem ldkjhsglksfjghfkjsghfhfgkjsghfsgkhf jhdflgkjhsfkljghdsgkjhfg jhlfkjghsfkjghf'},
+                    {id: 2, title: 'Post 2', body: 'lorem ldkjhsglksfjghfkjsghfhfgkjsghfsgkhf jhdflgkjhsfkljghdsgkjhfg jhlfkjghsfkjghf'},
+                    {id: 3, title: 'Post 3', body: 'lorem ldkjhsglksfjghfkjsghfhfgkjsghfsgkhf jhdflgkjhsfkljghdsgkjhfg jhlfkjghsfkjghf'},
+                    {id: 4, title: 'Post 4', body: 'lorem ldkjhsglksfjghfkjsghfhfgkjsghfsgkhf jhdflgkjhsfkljghdsgkjhfg jhlfkjghsfkjghf'}
+                ]
+            }
+        },
+        methods: {
+            display(){
+                console.log('Method display is working.')
+            }
+        }
+    });
+
+    Vue.component('post', {
+        template: '<li><slot></slot></li>'
+    });
+
+    //vm stands for view model
+    let vm = new Vue({
+        el: '#app'      
+    });
+
+</script>
